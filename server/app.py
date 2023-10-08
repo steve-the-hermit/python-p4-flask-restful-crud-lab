@@ -47,9 +47,10 @@ class PlantByID(Resource):
         plant = Plant.query.filter_by(id=id).first().to_dict()
         return make_response(jsonify(plant), 200)
 
-
+   
 api.add_resource(PlantByID, '/plants/<int:id>')
 
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
+  
